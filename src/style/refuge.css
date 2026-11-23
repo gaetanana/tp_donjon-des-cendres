@@ -1,0 +1,87 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #f6eddf;
+  background: #171c24;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.refuge {
+  width: min(64rem, calc(100% - 2rem));
+  margin: clamp(1rem, 6vw, 5rem) auto;
+  overflow: hidden;
+  background: #212731;
+  border: 1px solid #746754;
+  border-radius: .75rem;
+}
+.refuge > header {
+  min-height: clamp(18rem, 41vw, 28rem);
+  display: grid;
+  align-content: end;
+  gap: .65rem;
+  padding: clamp(1.25rem, 5vw, 3.5rem);
+  background: linear-gradient(0deg, #111820 2%, #111820c9 24%, #11182019 68%),
+              url('/refuge.jpg') center 52% / cover;
+}
+.refuge h1, .refuge h2, .refuge p { margin: 0; }
+.refuge h1, .refuge h2 { font-family: Georgia, serif; }
+.refuge h1 { font-size: clamp(2.2rem, 6vw, 4.6rem); line-height: 1.05; }
+.refuge header p { color: #f5dbac; }
+.refuge > section {
+  padding: clamp(1.25rem, 4vw, 2.75rem);
+  border-top: 1px solid #756851;
+}
+.refuge h2 { font-size: clamp(1.45rem, 3vw, 2.15rem); margin-bottom: .6rem; }
+.refuge section p { line-height: 1.6; max-width: 65ch; }
+.refuge img { display: block; max-width: 100%; height: auto; }
+.chat-refuge {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+  padding: 1rem 1.25rem;
+  background: #171c24;
+  border: 1px solid #746754;
+  border-radius: .75rem;
+}
+.chat-refuge img {
+  width: 60%;
+  flex-shrink: 0;
+  border-radius: .5rem;
+}
+.chat-refuge figcaption {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  color: #f5dbac;
+}
+.guild-master {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1.25rem 0;
+  padding: 1.25rem 1.5rem;
+  background: radial-gradient(circle at 0% 50%, #3a2f1f 0%, #171c24 60%);
+  border: 1px solid #746754;
+  border-radius: .75rem;
+}
+.guild-master img {
+  width: clamp(16rem, 45vw, 24rem);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: 45% 40%;
+  border-radius: 50%;
+  border: 3px solid #c9a45c;
+  box-shadow: 0 0 0 4px #171c24, 0 0 1.25rem #c9a45c66;
+  filter: sepia(.25) saturate(.9) brightness(.92) contrast(1.05);
+}
+.guild-master figcaption {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  color: #f5dbac;
+}
+@media (max-width: 30rem) {
+  .chat-refuge, .guild-master { flex-direction: column; text-align: center; }
+}

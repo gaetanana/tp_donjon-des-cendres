@@ -1,0 +1,12 @@
+.team-form [role="alert"] {
+  color: #ffded6;
+  border-inline-start: .25rem solid #ffad92;
+  padding-inline-start: .65rem;
+}
+.team-form input[aria-invalid="true"] { border-color: #ffad92; }
+.team-form p {
+  margin: 0;}
+
+#team-error{
+  color: red;
+}

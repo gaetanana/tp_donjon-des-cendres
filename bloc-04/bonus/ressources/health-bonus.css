@@ -1,0 +1,4 @@
+/* Facultatif : états de santé, distincts de la disponibilité essentielle. */
+.hero-card > .health-normal { color: #bde8ca; border-left: .25rem solid currentColor; padding-left: .65rem; }
+.hero-card > .health-wounded { color: #ffe3b5; border-left: .25rem solid currentColor; padding-left: .65rem; }
+.hero-card > .health-critical { color: #ffd0cc; border-left: .25rem solid currentColor; padding-left: .65rem; font-weight: 700; }

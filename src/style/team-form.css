@@ -1,0 +1,24 @@
+.team-panel { overflow-wrap: anywhere; }
+.team-form {
+  display: grid;
+  gap: .65rem;
+  max-width: 34rem;
+}
+.team-form label { font-weight: 600; }
+.team-form input, .team-form button {
+  min-width: 0;
+  min-height: 2.75rem;
+  border: 1px solid #a99573;
+  border-radius: .35rem;
+  padding: .55rem .8rem;
+  font: inherit;
+}
+.team-form input { width: 100%; background: #151c25; color: #fff2dc; }
+.team-form button {
+  justify-self: start;
+  background: #e8c893;
+  color: #29231c;
+  cursor: pointer;
+}
+.team-form :focus-visible { outline: 3px solid #ffe0a2; outline-offset: 3px; }
+.refuge .team-current { margin-top: .8rem; }

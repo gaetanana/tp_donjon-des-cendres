@@ -1,0 +1,14 @@
+/* Complément aux styles des blocs 01 et 02. Les textes sont produits en JSX. */
+.hero-card > .hero-status--available,
+.hero-card > .hero-status--unavailable {
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: .3rem .6rem;
+    border: 1px solid currentColor;
+    border-radius: .3rem;
+    font-weight: 700;
+}
+.hero-card > .hero-status--available { color: #bde8ca; background: #173526; }
+.hero-card > .hero-status--unavailable { color: #ffd0cc; background: #4b2328; }
+.hero-card > .hero-warning { color: #ffe3b5; line-height: 1.5; }

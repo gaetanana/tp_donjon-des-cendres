@@ -1,0 +1,6 @@
+.bestiary { margin-top: 2rem; }
+.bestiary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 1rem; }
+.monster-card { min-width: 0; padding: 1rem; border: 1px solid #93846c; border-radius: .75rem; background: #242a35; color: #f5eddf; overflow-wrap: anywhere; }
+.monster-card h3 { margin: 0 0 1rem; }
+.monster-card .hero-stats { margin-bottom: 0; }
+.monster-portrait { display: block; width: 100%; max-width: 10rem; height: auto; margin: 0 auto 1rem; }

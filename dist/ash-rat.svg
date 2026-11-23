@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" role="img" aria-labelledby="t">
+  <title id="t">Rat de cendres décharné, crâne à nu, yeux laiteux et gueule béante hérissée de dents, surgissant d'un fond brun où brillent d'autres yeux</title>
+  <defs>
+    <clipPath id="frame"><rect width="200" height="200" rx="20"/></clipPath>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#3b2117"/>
+      <stop offset=".5" stop-color="#140907"/>
+      <stop offset="1" stop-color="#020101"/>
+    </radialGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7a726c"/>
+      <stop offset=".5" stop-color="#3e3734"/>
+      <stop offset="1" stop-color="#161211"/>
+    </linearGradient>
+    <radialGradient id="maw" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset=".55" stop-color="#3a0405"/>
+      <stop offset="1" stop-color="#7a0d0d"/>
+    </radialGradient>
+    <radialGradient id="vign" cx="50%" cy="48%" r="70%">
+      <stop offset=".45" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".9"/>
+    </radialGradient>
+    <filter id="glow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="warp" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".06" numOctaves="2" seed="7" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 1.2"/>
+    </filter>
+    <g id="ear">
+      <path d="M66 64C42 26 14 44 26 80C34 96 56 90 68 76Z" fill="#2f2523"/>
+      <path d="M60 68C44 42 28 52 34 76C40 86 54 82 62 74Z" fill="#4a1c1c"/>
+      <path d="M58 70L44 54M56 72L36 66M54 74L40 80" stroke="#8a1f1f" stroke-width="1" opacity=".8"/>
+      <path d="M22 56L40 64L24 70Z M38 34L44 46 34 44Z" fill="#140907"/>
+    </g>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="200" height="200" fill="url(#bg)"/>
+    <!-- the swarm watching -->
+    <g fill="#ff2414" filter="url(#glow)">
+      <circle cx="22" cy="36" r="1.3"/><circle cx="29" cy="37" r="1.3"/>
+      <circle cx="170" cy="30" r="1.2"/><circle cx="177" cy="30" r="1.2"/>
+      <circle cx="16" cy="122" r="1.4"/><circle cx="23" cy="123" r="1.4"/>
+      <circle cx="180" cy="114" r="1.1"/><circle cx="186" cy="113" r="1.1"/>
+      <circle cx="152" cy="62" r=".9"/><circle cx="157" cy="63" r=".9"/>
+      <circle cx="40" cy="72" r=".9"/><circle cx="45" cy="72" r=".9"/>
+      <circle cx="30" cy="168" r="1.2"/><circle cx="36" cy="167" r="1.2"/>
+      <circle cx="168" cy="172" r="1.3"/><circle cx="175" cy="173" r="1.3"/>
+    </g>
+    <!-- hunched body -->
+    <path d="M6 200C14 150 60 126 100 128C140 126 186 150 194 200Z" fill="#191312" filter="url(#warp)"/>
+    <path d="M40 160l6-12 4 12 6-14 4 13 6-12M134 148l6 12 4-13 6 14 4-12 6 12" fill="none" stroke="#2c2321" stroke-width="2"/>
+    <!-- ears -->
+    <use xlink:href="#ear" href="#ear" filter="url(#warp)"/>
+    <use xlink:href="#ear" href="#ear" transform="matrix(-1 0 0 1 200 0)" filter="url(#warp)"/>
+    <!-- head -->
+    <path d="M60 66C66 40 134 40 140 66C148 92 134 118 122 140L114 178H86L78 140C66 118 52 92 60 66Z" fill="url(#skin)" filter="url(#warp)"/>
+    <!-- skull showing through torn skin -->
+    <path d="M86 54C94 44 110 44 116 54L112 68 104 62 99 70 92 64Z" fill="#cdbfa4" stroke="#5a1010" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M96 50l3 8-4 5M108 52l-2 7" fill="none" stroke="#5c4d36" stroke-width="1.2"/>
+    <!-- sunken sockets -->
+    <ellipse cx="80" cy="88" rx="14" ry="9" transform="rotate(22 80 88)" fill="#050202"/>
+    <ellipse cx="120" cy="88" rx="14" ry="9" transform="rotate(-22 120 88)" fill="#050202"/>
+    <!-- milky dead eyes -->
+    <ellipse cx="81" cy="89" rx="7" ry="5" transform="rotate(22 81 89)" fill="#cfc8b4"/>
+    <ellipse cx="119" cy="89" rx="7" ry="5" transform="rotate(-22 119 89)" fill="#cfc8b4"/>
+    <path d="M75 87l4 2M77 92l3-1M125 87l-4 2M123 92l-3-1" stroke="#a3201c" stroke-width=".8"/>
+    <g fill="#ff1a0a" filter="url(#glow)">
+      <circle cx="83" cy="90" r="1.5"/>
+      <circle cx="117" cy="90" r="1.5"/>
+    </g>
+    <!-- furrows -->
+    <path d="M70 76q10 2 18 10M130 76q-10 2-18 10M92 76q8 6 16 0" fill="none" stroke="#120d0c" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M70 104q6 8 4 18M130 104q-6 8-4 18" fill="none" stroke="#120d0c" stroke-width="1.6" opacity=".7"/>
+    <!-- wet nose -->
+    <path d="M93 118q7-6 14 0q-2 6-7 6q-5 0-7-6Z" fill="#2a0c0c"/>
+    <ellipse cx="97" cy="119" rx="1.6" ry="1" fill="#e9d8d0" opacity=".7"/>
+    <!-- gaping maw -->
+    <path d="M78 130Q100 122 122 130L117 182Q100 194 83 182Z" fill="url(#maw)"/>
+    <!-- needle teeth -->
+    <g fill="#d8cdb0">
+      <path d="M80 136l9 3-9 3Z M81 145l8 3-8 3Z M81 154l9 3-9 3Z M82 163l8 3-8 3Z M83 172l8 3-8 3Z"/>
+      <path d="M120 136l-9 3 9 3Z M119 145l-8 3 8 3Z M119 154l-9 3 9 3Z M118 163l-8 3 8 3Z M117 172l-8 3 8 3Z"/>
+    </g>
+    <!-- long rotten incisors -->
+    <path d="M93 128h6l-1 30-4-3Z M101 128h6l-1 27-4 3Z" fill="#b89a52" stroke="#3a2a08" stroke-width="1"/>
+    <path d="M95 136l2 4M103 140l1 4" stroke="#3a2a08" stroke-width=".8"/>
+    <path d="M94 186l1-16 4 1 0 15Z M101 186l1-15 4-1 0 16Z" fill="#a88a48" stroke="#3a2a08" stroke-width="1"/>
+    <!-- saliva -->
+    <g fill="none" stroke="#e6ddcc" stroke-width=".9" opacity=".55">
+      <path d="M94 158q-2 10 2 22"/>
+      <path d="M106 156q3 9-1 18"/>
+      <path d="M87 142q4 12 1 26"/>
+    </g>
+    <!-- blood -->
+    <path d="M83 180q-3 8-2 14q2 4 4 0q0-6-2-14Z" fill="#7a0808"/>
+    <path d="M118 176q2 6 1 10q-2 3-3 0q0-4 2-10Z" fill="#6a0707"/>
+    <!-- broken whiskers -->
+    <g stroke="#bdb4a4" stroke-width=".9" opacity=".5" stroke-linecap="round">
+      <path d="M86 124L54 112M86 128L48 132M114 124L150 110M114 128L144 136"/>
+    </g>
+    <!-- falling ash -->
+    <g fill="#9c938a" opacity=".5">
+      <circle cx="50" cy="20" r="1.2"/><circle cx="130" cy="14" r="1"/><circle cx="160" cy="92" r="1.3"/>
+      <circle cx="36" cy="100" r="1"/><circle cx="62" cy="40" r=".9"/><circle cx="146" cy="44" r="1.1"/>
+    </g>
+    <rect width="200" height="200" fill="url(#vign)"/>
+    <rect width="200" height="200" filter="url(#grain)" opacity=".35"/>
+  </g>
+  <rect x="1" y="1" width="198" height="198" rx="19" fill="none" stroke="#6a1410" stroke-opacity=".7" stroke-width="2"/>
+</svg>

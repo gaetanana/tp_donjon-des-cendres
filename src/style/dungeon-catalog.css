@@ -1,0 +1,11 @@
+/* Apparence fournie du catalogue : recherche, liste, choix actif et focus clavier. */
+.dungeon-catalog { margin-top: 2rem; padding: 1.25rem; border: 1px solid #9b8157; border-radius: .75rem; background: #201e2a; color: #f6ead5; overflow-wrap: anywhere; }
+.catalog-search { display: grid; gap: .5rem; }
+.catalog-search input { box-sizing: border-box; width: 100%; min-width: 0; padding: .65rem; font: inherit; color: #f6ead5; background: #14131c; border: 1px solid #bca579; border-radius: .35rem; }
+.dungeon-list { list-style: none; padding: 0; display: grid; gap: 1rem; }
+.dungeon-list li { min-width: 0; padding: 1rem; background: #2c2938; border-radius: .5rem; }
+.dungeon-list h3 { margin-top: 0; }
+.dungeon-catalog button { max-width: 100%; white-space: normal; overflow-wrap: anywhere; padding: .65rem .85rem; border: 1px solid #c8ad75; border-radius: .35rem; background: #3d3342; color: #fff0cb; font: inherit; cursor: pointer; }
+.dungeon-catalog button[aria-pressed="true"] { background: #775724; color: #fff; }
+.dungeon-catalog :is(button, input):focus-visible { outline: 3px solid #ffe2a1; outline-offset: 3px; }
+.dungeon-summary { margin-top: 1rem; padding: .75rem; border-left: 3px solid #d8ba7b; }

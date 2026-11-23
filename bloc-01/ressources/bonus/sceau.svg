@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="240" viewBox="0 0 320 240" role="img" aria-label="Blason à la tour et aux braises">
+  <rect width="320" height="240" rx="14" fill="#1e2630"/>
+  <path d="M160 25 230 51v57c0 53-32 85-70 108-38-23-70-55-70-108V51Z" fill="#344453" stroke="#d6ad78" stroke-width="4"/>
+  <path d="M119 151h82v12h-82zm12-62h12v10h10V86h14v13h10V89h12v24h-7l7 37h-20v-19a9 9 0 0 0-18 0v19h-20l7-37h-7z" fill="#f0d4a5"/>
+  <path d="m160 48 8 13-8 9-8-9z" fill="#f39459"/>
+</svg>

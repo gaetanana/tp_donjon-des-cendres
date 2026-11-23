@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" role="img" aria-labelledby="t">
+  <title id="t">Chauve-souris des grottes aux ailes déchirées veinées de rouge, six yeux rouges et une gueule béante remplie de crocs</title>
+  <defs>
+    <clipPath id="frame"><rect width="200" height="200" rx="20"/></clipPath>
+    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0" stop-color="#2a1424"/>
+      <stop offset=".5" stop-color="#0c060c"/>
+      <stop offset="1" stop-color="#000"/>
+    </radialGradient>
+    <radialGradient id="blood" cx="50%" cy="45%" r="50%">
+      <stop offset="0" stop-color="#8a0f22" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#8a0f22" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2634"/>
+      <stop offset="1" stop-color="#120a10"/>
+    </linearGradient>
+    <linearGradient id="flesh" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5a4450"/>
+      <stop offset="1" stop-color="#1e1218"/>
+    </linearGradient>
+    <radialGradient id="maw" cx="50%" cy="35%" r="65%">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset=".6" stop-color="#3d0410"/>
+      <stop offset="1" stop-color="#8a1426"/>
+    </radialGradient>
+    <radialGradient id="vign" cx="50%" cy="45%" r="70%">
+      <stop offset=".45" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".9"/>
+    </radialGradient>
+    <filter id="glow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="warp" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".07" numOctaves="2" seed="11" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 1.2"/>
+    </filter>
+    <g id="wingL">
+      <path d="M88 92C70 56 38 40 4 52C12 64 14 76 8 92L18 88 22 100C30 96 36 102 36 116L44 108 50 118C56 110 62 114 64 128C70 116 80 116 86 126Z" fill="url(#wing)" filter="url(#warp)"/>
+      <!-- tears in the membrane -->
+      <path d="M30 70q6 2 4 10q-6 0-4-10Z M54 96q8 0 6 8q-8 2-6-8Z M20 80l6 4-5 3Z" fill="#000"/>
+      <g fill="none" stroke="#7a1428" stroke-width="1.6" stroke-linecap="round" opacity=".9">
+        <path d="M88 90L40 54L4 52M40 54L8 92M40 54L36 116M86 98L64 128"/>
+      </g>
+      <path d="M40 54q-6-10 2-14q-2 6 2 8" fill="none" stroke="#c9b9a6" stroke-width="2.2" stroke-linecap="round"/>
+    </g>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="200" height="200" fill="url(#bg)"/>
+    <ellipse cx="100" cy="90" rx="90" ry="70" fill="url(#blood)"/>
+    <!-- stalactites -->
+    <path d="M0 0H200V8L188 34 180 10 170 44 160 8 150 26 140 6H60L52 30 44 8 34 48 24 10 14 32 6 8 0 16Z" fill="#000"/>
+    <!-- swarm -->
+    <g fill="#000">
+      <path d="M22 150q7-8 12 0q5-8 12 0q-6-2-12 4q-6-6-12-4Z"/>
+      <path d="M150 168q6-6 10 0q4-6 10 0q-5-2-10 3q-5-5-10-3Z"/>
+      <path d="M160 40q5-5 8 0q3-5 8 0q-4-1-8 3q-4-4-8-3Z"/>
+      <path d="M40 176q5-5 8 0q3-5 8 0q-4-1-8 3q-4-4-8-3Z"/>
+    </g>
+    <g fill="#ff1f3a" filter="url(#glow)">
+      <circle cx="28" cy="151" r=".9"/><circle cx="40" cy="151" r=".9"/>
+      <circle cx="157" cy="169" r=".8"/><circle cx="163" cy="169" r=".8"/>
+      <circle cx="166" cy="41" r=".7"/><circle cx="170" cy="41" r=".7"/>
+      <circle cx="16" cy="104" r="1"/><circle cx="22" cy="105" r="1"/>
+      <circle cx="182" cy="128" r="1"/><circle cx="188" cy="127" r="1"/>
+    </g>
+    <!-- wings -->
+    <use xlink:href="#wingL" href="#wingL"/>
+    <use xlink:href="#wingL" href="#wingL" transform="matrix(-1 0 0 1 200 0)"/>
+    <!-- gaunt body with ribs -->
+    <ellipse cx="100" cy="122" rx="16" ry="26" fill="url(#flesh)" filter="url(#warp)"/>
+    <path d="M88 116q12 5 24 0M89 124q11 5 22 0M90 132q10 4 20 0M92 140q8 3 16 0" fill="none" stroke="#8a7480" stroke-width="1.3" opacity=".6"/>
+    <path d="M94 146l-4 14M106 146l4 14M90 160l-3 3M90 160l1 4M110 160l3 3M110 160l-1 4" stroke="#c9b9a6" stroke-width="1.6" stroke-linecap="round"/>
+    <!-- torn ears -->
+    <path d="M82 76L70 30L96 66Z" fill="#3a2634" filter="url(#warp)"/>
+    <path d="M118 76L130 30L104 66Z" fill="#3a2634" filter="url(#warp)"/>
+    <path d="M74 40l6 4-5 3Z M126 46l-6 2 5 4Z" fill="#000"/>
+    <path d="M82 70L76 44L92 66Z M118 70L124 44L108 66Z" fill="#5a1222" opacity=".8"/>
+    <!-- head -->
+    <path d="M78 82C78 64 122 64 122 82C124 96 114 104 100 104C86 104 76 96 78 82Z" fill="url(#flesh)" filter="url(#warp)"/>
+    <!-- nose-leaf -->
+    <path d="M100 70L94 82Q100 88 106 82Z" fill="#2a1820" stroke="#6a4a58" stroke-width="1"/>
+    <path d="M97 84q3 2 6 0" fill="none" stroke="#000" stroke-width="1.6"/>
+    <!-- six eyes -->
+    <g fill="#ff1f3a" filter="url(#glow)">
+      <ellipse cx="89" cy="80" rx="3.4" ry="2.6"/>
+      <ellipse cx="111" cy="80" rx="3.4" ry="2.6"/>
+      <circle cx="84" cy="73" r="1.7"/>
+      <circle cx="116" cy="73" r="1.7"/>
+      <circle cx="86" cy="87" r="1.3"/>
+      <circle cx="114" cy="87" r="1.3"/>
+    </g>
+    <circle cx="89" cy="80" r=".9" fill="#000"/><circle cx="111" cy="80" r=".9" fill="#000"/>
+    <!-- gaping mouth -->
+    <path d="M84 92Q100 86 116 92L112 124Q100 132 88 124Z" fill="url(#maw)"/>
+    <g fill="#ebe2d2">
+      <path d="M86 94l4 14 2-13Z M114 94l-4 14-2-13Z"/>
+      <path d="M93 92l1.5 6 1.5-6Z M98 91l1.5 5 1.5-5Z M103 92l1.5 6 1.5-6Z"/>
+      <path d="M89 122l3-10 2 11Z M111 122l-3-10-2 11Z M96 126l1.5-6 1.5 6Z M102 126l1.5-6 1.5 6Z"/>
+      <path d="M86 100l5 2-4 2Z M114 100l-5 2 4 2Z M87 110l5 2-4 2Z M113 110l-5 2 4 2Z"/>
+    </g>
+    <g fill="none" stroke="#e8d8d0" stroke-width=".8" opacity=".5">
+      <path d="M91 106q-1 8 1 14M108 106q2 7 0 13"/>
+    </g>
+    <path d="M90 124q-1 10 0 18q2 3 3 0q0-8-3-18Z" fill="#8a0f22"/>
+    <rect width="200" height="200" fill="url(#vign)"/>
+    <rect width="200" height="200" filter="url(#grain)" opacity=".35"/>
+  </g>
+  <rect x="1" y="1" width="198" height="198" rx="19" fill="none" stroke="#7a1428" stroke-opacity=".7" stroke-width="2"/>
+</svg>

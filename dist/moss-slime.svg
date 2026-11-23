@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="t">
+  <title id="t">Gelée de mousse putride où fond un visage humain qui hurle, des mains pressées contre sa membrane de l'intérieur, entourée de mouches</title>
+  <defs>
+    <clipPath id="frame"><rect width="200" height="200" rx="20"/></clipPath>
+    <clipPath id="body"><path d="M22 160C10 112 34 72 62 66C70 34 132 30 142 66C170 74 192 112 178 162C150 178 52 178 22 160Z"/></clipPath>
+    <radialGradient id="bg" cx="50%" cy="55%" r="75%">
+      <stop offset="0" stop-color="#121a0c"/>
+      <stop offset=".5" stop-color="#050704"/>
+      <stop offset="1" stop-color="#000"/>
+    </radialGradient>
+    <linearGradient id="slime" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5e6230"/>
+      <stop offset=".45" stop-color="#3a4420"/>
+      <stop offset="1" stop-color="#0c1207"/>
+    </linearGradient>
+    <radialGradient id="facelight" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#a8b070" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#a8b070" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hole" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset=".8" stop-color="#0a0d05"/>
+      <stop offset="1" stop-color="#2a3214"/>
+    </radialGradient>
+    <radialGradient id="vign" cx="50%" cy="50%" r="70%">
+      <stop offset=".4" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".92"/>
+    </radialGradient>
+    <filter id="glow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="warp" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="3" seed="2" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="blur"><feGaussianBlur stdDeviation="1.4"/></filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 1.2"/>
+    </filter>
+    <g id="hand" fill="#c9c2a0">
+      <ellipse cx="0" cy="0" rx="9" ry="11"/>
+      <rect x="-9" y="-28" width="4" height="18" rx="2" transform="rotate(-14)"/>
+      <rect x="-4" y="-31" width="4" height="21" rx="2" transform="rotate(-4)"/>
+      <rect x="1" y="-30" width="4" height="20" rx="2" transform="rotate(5)"/>
+      <rect x="6" y="-25" width="4" height="16" rx="2" transform="rotate(14)"/>
+      <rect x="8" y="-6" width="4" height="14" rx="2" transform="rotate(-60)"/>
+    </g>
+    <g id="flyL"><ellipse rx="1.6" ry="1" fill="#000"/><ellipse cx="-1" cy="-1.4" rx="1.4" ry=".7" fill="#9aa0a0" opacity=".5"/></g>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="200" height="200" fill="url(#bg)"/>
+    <path d="M0 172Q50 162 100 168T200 166V200H0Z" fill="#030402"/>
+    <ellipse cx="100" cy="170" rx="94" ry="13" fill="#3a4420" opacity=".4"/>
+    <!-- body -->
+    <path d="M22 160C10 112 34 72 62 66C70 34 132 30 142 66C170 74 192 112 178 162C150 178 52 178 22 160Z" fill="url(#slime)" opacity=".95" filter="url(#warp)"/>
+    <g clip-path="url(#body)">
+      <!-- hands pressing from the inside -->
+      <use href="#hand" transform="translate(40 116) rotate(-24)" opacity=".45" filter="url(#blur)"/>
+      <use href="#hand" transform="translate(162 112) rotate(26) scale(.9)" opacity=".4" filter="url(#blur)"/>
+      <use href="#hand" transform="translate(150 152) rotate(70) scale(.7)" opacity=".25" filter="url(#blur)"/>
+      <!-- drowned bones -->
+      <g fill="none" stroke="#c9c2a0" stroke-width="2" opacity=".22" filter="url(#blur)">
+        <path d="M40 148q10-8 22 0M38 156q12-8 26 0M51 142v22"/>
+        <circle cx="140" cy="80" r="8"/>
+      </g>
+      <ellipse cx="100" cy="110" rx="44" ry="50" fill="url(#facelight)"/>
+      <path d="M22 160C54 176 150 176 178 162" fill="none" stroke="#050803" stroke-width="18" opacity=".7"/>
+    </g>
+    <!-- the melting face -->
+    <g filter="url(#warp)">
+      <!-- brow / cheek folds -->
+      <path d="M70 80q14-10 26-2M104 78q12-8 26 2" fill="none" stroke="#1c220e" stroke-width="3" stroke-linecap="round"/>
+      <path d="M64 108q4 14 14 22M136 108q-4 14-14 22" fill="none" stroke="#1c220e" stroke-width="2.4" stroke-linecap="round"/>
+      <!-- dripping eye holes -->
+      <path d="M72 88q12-10 24 0q2 12-4 20q-2 14-4 26q-3-10-3-18q-11-6-13-28Z" fill="url(#hole)"/>
+      <path d="M128 88q-12-10-24 0q-2 12 4 20q2 10 3 20q3-8 4-14q11-6 13-26Z" fill="url(#hole)"/>
+      <!-- nose slits -->
+      <path d="M96 112l-2 8M104 112l2 8" stroke="#0a0d05" stroke-width="2.6" stroke-linecap="round"/>
+      <!-- screaming mouth -->
+      <path d="M100 124C114 124 116 142 112 158C108 172 92 172 88 158C84 142 86 124 100 124Z" fill="url(#hole)"/>
+    </g>
+    <!-- pupils deep in the holes -->
+    <g fill="#eef6b0" filter="url(#glow)">
+      <circle cx="84" cy="94" r="1.6"/>
+      <circle cx="116" cy="94" r="1.6"/>
+    </g>
+    <!-- crooked human teeth -->
+    <g fill="#bcb38a" stroke="#1a1a0a" stroke-width=".6">
+      <path d="M93 128h4v6h-4Z M98 127h4v7h-4Z M103 128h4v5h-4Z"/>
+      <path d="M95 162h3v-4h-3Z M102 163h3v-6h-3Z"/>
+    </g>
+    <!-- strings of slime across the mouth -->
+    <g fill="none" stroke="#7a8a40" stroke-width="1" opacity=".7">
+      <path d="M94 134q-2 12 2 26M106 133q3 10-1 26"/>
+    </g>
+    <!-- drips -->
+    <g fill="#3a4420">
+      <path d="M46 168q4 0 4 10a4 4 0 0 1-8 0q0-10 4-10Z"/>
+      <path d="M100 170q3 0 3 10a3 3 0 0 1-6 0q0-10 3-10Z"/>
+      <path d="M154 168q3 0 3 6a3 3 0 0 1-6 0q0-6 3-6Z"/>
+    </g>
+    <!-- skeletal hand in the puddle -->
+    <g stroke="#c9c2a0" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".85">
+      <path d="M176 172l4-16M180 156l-4-10M180 156l2-12M180 156l6-9M180 156l8-4"/>
+    </g>
+    <!-- flies -->
+    <use href="#flyL" transform="translate(60 48) rotate(20)"/>
+    <use href="#flyL" transform="translate(150 40) rotate(-30)"/>
+    <use href="#flyL" transform="translate(132 60) rotate(60)"/>
+    <use href="#flyL" transform="translate(30 92) rotate(-10)"/>
+    <use href="#flyL" transform="translate(88 32) rotate(90)"/>
+    <use href="#flyL" transform="translate(176 96) rotate(40)"/>
+    <rect width="200" height="200" fill="url(#vign)"/>
+    <rect width="200" height="200" filter="url(#grain)" opacity=".3"/>
+  </g>
+  <rect x="1" y="1" width="198" height="198" rx="19" fill="none" stroke="#4a5422" stroke-opacity=".7" stroke-width="2"/>
+</svg>

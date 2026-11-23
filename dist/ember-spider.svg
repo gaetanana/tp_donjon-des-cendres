@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" role="img" aria-labelledby="t">
+  <title id="t">Gros plan sur la face d'une araignée de braise velue, huit yeux noirs luisants où se reflète ta silhouette, crocs énormes dégoulinant de venin en fusion</title>
+  <defs>
+    <clipPath id="frame"><rect width="200" height="200" rx="20"/></clipPath>
+    <radialGradient id="bg" cx="50%" cy="55%" r="75%">
+      <stop offset="0" stop-color="#2a0a05"/>
+      <stop offset=".5" stop-color="#0a0302"/>
+      <stop offset="1" stop-color="#000"/>
+    </radialGradient>
+    <radialGradient id="head" cx="50%" cy="65%" r="60%">
+      <stop offset="0" stop-color="#5e2818"/>
+      <stop offset=".7" stop-color="#2a100a"/>
+      <stop offset="1" stop-color="#050202"/>
+    </radialGradient>
+    <radialGradient id="orb" cx="50%" cy="60%" r="55%">
+      <stop offset="0" stop-color="#5a0a06"/>
+      <stop offset=".55" stop-color="#140202"/>
+      <stop offset="1" stop-color="#000"/>
+    </radialGradient>
+    <linearGradient id="fang" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a0a07"/>
+      <stop offset=".5" stop-color="#a07a50"/>
+      <stop offset="1" stop-color="#f4e6c8"/>
+    </linearGradient>
+    <linearGradient id="lava" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff2a8"/>
+      <stop offset=".5" stop-color="#ffa13d"/>
+      <stop offset="1" stop-color="#e8350f"/>
+    </linearGradient>
+    <radialGradient id="under" cx="50%" cy="100%" r="60%">
+      <stop offset="0" stop-color="#ff5a1a" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#ff5a1a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vign" cx="50%" cy="50%" r="70%">
+      <stop offset=".45" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".9"/>
+    </radialGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="warp" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="2" seed="5" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 1.2"/>
+    </filter>
+    <g id="legsL" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke="#140806" stroke-width="20" stroke-dasharray="1.2 2.4">
+        <path d="M70 90L38 8"/><path d="M62 104L6 40"/><path d="M60 124L0 130"/><path d="M66 140L18 206"/>
+      </g>
+      <g stroke="#0a0403" stroke-width="13">
+        <path d="M70 90L38 8"/><path d="M62 104L6 40"/><path d="M60 124L0 130"/><path d="M66 140L18 206"/>
+      </g>
+      <g stroke="#ff5a1a" stroke-width="1.2" opacity=".6" filter="url(#glow)">
+        <path d="M58 60L44 24M40 78L14 50M30 126L4 128M44 168L24 198"/>
+      </g>
+    </g>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="200" height="200" fill="url(#bg)"/>
+    <rect width="200" height="200" fill="url(#under)"/>
+    <!-- legs closing in from the edges -->
+    <use xlink:href="#legsL" href="#legsL"/>
+    <use xlink:href="#legsL" href="#legsL" transform="matrix(-1 0 0 1 200 0)"/>
+    <!-- hairy head -->
+    <ellipse cx="100" cy="108" rx="58" ry="52" fill="none" stroke="#1c0b08" stroke-width="14" stroke-dasharray="1 2" filter="url(#warp)"/>
+    <ellipse cx="100" cy="108" rx="56" ry="50" fill="url(#head)" filter="url(#warp)"/>
+    <g stroke="#2c140e" stroke-width="1.1" stroke-linecap="round">
+      <path d="M100 62v-10M92 64l-3-9M108 64l3-9M100 96v-6M74 120l-8 2M126 120l8 2M80 132l-6 5M120 132l6 5M66 100l-8-2M134 100l8-2"/>
+    </g>
+    <!-- eight glossy eyes -->
+    <g stroke="#ff2a10" stroke-width="1.2" filter="url(#glow)">
+      <circle cx="82" cy="102" r="15" fill="url(#orb)"/>
+      <circle cx="118" cy="102" r="15" fill="url(#orb)"/>
+      <circle cx="58" cy="90" r="7" fill="url(#orb)"/>
+      <circle cx="142" cy="90" r="7" fill="url(#orb)"/>
+      <circle cx="70" cy="74" r="5.6" fill="url(#orb)"/>
+      <circle cx="130" cy="74" r="5.6" fill="url(#orb)"/>
+      <circle cx="91" cy="78" r="4" fill="url(#orb)"/>
+      <circle cx="109" cy="78" r="4" fill="url(#orb)"/>
+    </g>
+    <!-- specular highlights -->
+    <g fill="#fff">
+      <path d="M74 94q6-5 12-3q-5 1-9 6Z" opacity=".9"/>
+      <path d="M110 94q6-5 12-3q-5 1-9 6Z" opacity=".9"/>
+      <circle cx="56" cy="87" r="1.4"/><circle cx="140" cy="87" r="1.4"/>
+      <circle cx="68.5" cy="72" r="1.1"/><circle cx="128.5" cy="72" r="1.1"/>
+      <circle cx="90" cy="76.5" r=".8"/><circle cx="108" cy="76.5" r=".8"/>
+    </g>
+    <!-- your reflection in its main eyes -->
+    <g fill="#ffb07a" opacity=".55">
+      <circle cx="84" cy="104" r="1.2"/><path d="M82.4 106h3.2l.6 5h-4.4Z"/>
+      <circle cx="120" cy="104" r="1.2"/><path d="M118.4 106h3.2l.6 5h-4.4Z"/>
+    </g>
+    <!-- pedipalps -->
+    <path d="M70 132q-14 10-10 30M130 132q14 10 10 30" fill="none" stroke="#120706" stroke-width="7" stroke-linecap="round"/>
+    <!-- chelicerae -->
+    <path d="M78 124C74 144 80 158 92 162L98 128Z M122 124C126 144 120 158 108 162L102 128Z" fill="#2e140c" stroke="#7a3018" stroke-width="1.4" filter="url(#warp)"/>
+    <!-- fangs -->
+    <path d="M88 156C84 170 90 182 100 186C94 178 92 168 96 158Z" fill="url(#fang)"/>
+    <path d="M112 156C116 170 110 182 100 186C106 178 108 168 104 158Z" fill="url(#fang)"/>
+    <!-- molten venom -->
+    <g fill="url(#lava)" filter="url(#glow)">
+      <path d="M99 184q2 0 2 6q0 6-2 8q-2-2-2-8q0-6 2-6Z"/>
+      <path d="M90 170q1.6 0 1.6 5q0 4-1.6 6q-1.6-2-1.6-6q0-5 1.6-5Z"/>
+    </g>
+    <rect width="200" height="200" fill="url(#vign)"/>
+    <rect width="200" height="200" filter="url(#grain)" opacity=".3"/>
+  </g>
+  <rect x="1" y="1" width="198" height="198" rx="19" fill="none" stroke="#a8300c" stroke-opacity=".7" stroke-width="2"/>
+</svg>

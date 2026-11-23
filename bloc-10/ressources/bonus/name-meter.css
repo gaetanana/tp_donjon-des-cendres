@@ -1,0 +1,5 @@
+.team-form .name-meter {
+  font-variant-numeric: tabular-nums;
+  border-inline-start: .2rem solid #c9aa72;
+  padding-inline-start: .65rem;
+}

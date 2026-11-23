@@ -1,0 +1,26 @@
+/* Complément au refuge du bloc 01. Aucun contenu ou calcul fourni. */
+.hero-card {
+  margin-top: 1.4rem;
+  padding: clamp(1rem, 3vw, 1.75rem);
+  background: #171e28;
+  border: 1px solid #8e7b5a;
+  border-radius: .5rem;
+  overflow-wrap: anywhere;
+}
+.hero-card > p { color: #f5dbac; }
+.hero-stats {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: .65rem 1rem;
+  margin: 1.25rem 0 0;
+  line-height: 1.5;
+}
+.hero-stats dt { color: #d5caba; }
+.hero-stats dd { margin: 0; font-weight: 600; }
+.hero-card h3 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.25rem, 2.5vw, 1.6rem); }
+.hero-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+.hero-list .hero-card { margin-top: 1.4rem; }
