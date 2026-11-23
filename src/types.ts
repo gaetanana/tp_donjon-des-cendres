@@ -23,3 +23,12 @@ export type Dungeon = {
     difficulty: string // Libellé présenté à l'utilisateur.
     description: string // Texte affiché dans le résumé de la destination choisie.
 }
+
+export type Monster = {
+    id: string,
+    name: string,
+    health: number,
+    armor: number,
+    portrait: string,
+    portraitAlt: string,
+};
