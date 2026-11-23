@@ -11,60 +11,15 @@ import "./style/validation.css"
 import './style/dungeon-catalog.css'
 import "./style/hero-rename.css"
 import {ChangeEvent, FormEvent, SubmitEvent, useState} from "react";
-
-// Dungeon est le nom choisi pour le type d'un objet destination.
-type Dungeon = {
-    id: string // Identifiant stable, utilisé pour retrouver cette destination.
-    name: string // Nom affiché et recherché dans le catalogue.
-    recommendedLevel: number // Nombre utilisé pour le tri croissant.
-    difficulty: string // Libellé présenté à l'utilisateur.
-    description: string // Texte affiché dans le résumé de la destination choisie.
-}
-
-// Dungeon[] indique un tableau composé d'objets du type Dungeon.
-// L'ordre source Forge/Cave/Crypte reste intact ; l'affichage sera trié séparément.
-const dungeons: Dungeon[] = [
-    {
-        id: 'ember-forge',
-        name: 'Forge des braises',
-        recommendedLevel: 3,
-        difficulty: 'Difficile',
-        description: 'Une ancienne forge au cœur de la montagne.',
-    },
-    {
-        id: 'ash-cellar',
-        name: 'Cave des cendres',
-        recommendedLevel: 1,
-        difficulty: 'Facile',
-        description: 'Une réserve oubliée sous le refuge.',
-    },
-    {
-        id: 'silent-crypt',
-        name: 'Crypte silencieuse',
-        recommendedLevel: 2,
-        difficulty: 'Modérée',
-        description: 'Des galeries de pierre sous une chapelle abandonnée.',
-    },
-]
+import type {Hero, HeroChoice} from "./types";
+import {dungeons} from "./data/dungeons";
+import DungeonPicker from "./components/DungeonPicker";
+import PreparationSummary from "./components/PreparationSummary";
 
 // Les types héros
-type HeroChoice = 'warrior' | 'mage' | 'priest' | 'guildMaster';
 type propositions = 'Les Archivistes' | 'Les Éclaireurs';
 const archivistes: propositions = 'Les Archivistes';
 const eclaireurs: propositions = 'Les Éclaireurs';
-type Hero = {
-    id: HeroChoice,
-    name: string,
-    heroClass: "Guerrier" | "Mage" | "Prêtre" | "Maître de guilde",
-    level: number,
-    health: number,
-    maxHealth: number,
-    constitution: number,
-    strength: number,
-    power: number,
-    armor: number
-}
-
 type HeroStatus = 'available' | 'unvailable';
 type HealthState = 'Normal' | 'Blessé' | 'Critique';
 type HeroCardProps = {
@@ -303,7 +258,6 @@ export default function App() {
     const [canUndo, setCanUndo] = useState<boolean>(false);
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [teamError, setTeamError] = useState<string>('');
-    const [dungeonQuery, setDungeonQuery] = useState<string>('');
     const [selectedDungeonId, setSelectedDungeonId] = useState<string>('');
 
     function handleShowDetail() {
@@ -436,8 +390,9 @@ export default function App() {
         setHeroError('');
     }
 
-    function changeDungeonQuery(event: ChangeEvent<HTMLInputElement>): void {
-        setDungeonQuery(event.currentTarget.value)
+    // Efface seulement la destination : la recherche et l'équipe restent en place.
+    function clearDungeon(): void {
+        setSelectedDungeonId('')
     }
 
     function undoTeamName(): void {
@@ -454,16 +409,6 @@ export default function App() {
         setDraftName(eclaireurs)
     }
 
-    // Copie préparée de la recherche : l'état dungeonQuery n'est pas modifié.
-    const normalizedQuery = dungeonQuery.trim().toLowerCase()
-    // Garder les donjons dont le nom contient la recherche.
-    const matchingDungeons = dungeons.filter((dungeon) =>
-        dungeon.name.toLowerCase().includes(normalizedQuery)
-    )
-    // Trier une copie par niveau conseillé croissant.
-    const visibleDungeons = matchingDungeons
-        .slice()
-        .sort((a, b) => a.recommendedLevel - b.recommendedLevel)
     // Chercher dans le catalogue complet pour garder le choix même s'il est masqué.
     const selectedDungeon = dungeons.find((dungeon) => dungeon.id === selectedDungeonId)
 
@@ -596,51 +541,17 @@ export default function App() {
                 </div>
             </section>
 
-            <section className="dungeon-catalog">
-                <h2>Catalogue de donjons</h2>
-                <div className="catalog-search">
-                    <label htmlFor="dungeon-query">Rechercher un donjon</label>
-                    <input
-                        id="dungeon-query"
-                        type="search"
-                        value={dungeonQuery}
-                        onChange={changeDungeonQuery}
-                    />
-                </div>
+            <DungeonPicker
+                selectedDungeonId={selectedDungeonId}
+                onChoose={setSelectedDungeonId}
+            />
 
-                <p role="status">Résultats : {visibleDungeons.length}</p>
-                {visibleDungeons.length === 0 && (
-                    <p>Aucun donjon ne correspond à la recherche.</p>
-                )}
-
-                <ul className="dungeon-list">
-                    {visibleDungeons.map((dungeon) => (
-                        <li key={dungeon.id}>
-                            <h3>{dungeon.name}</h3>
-                            <p>Niveau conseillé : {dungeon.recommendedLevel} · Difficulté : {dungeon.difficulty}</p>
-                            <button
-                                type="button"
-                                aria-pressed={selectedDungeonId === dungeon.id}
-                                onClick={() => setSelectedDungeonId(dungeon.id)}
-                            >
-                                Choisir {dungeon.name}
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-
-                <div className="dungeon-summary">
-                    {selectedDungeon ? (
-                        <div>
-                            <h3>Donjon choisi : {selectedDungeon.name}</h3>
-                            <p>{selectedDungeon.description}</p>
-                            <p>Niveau conseillé : {selectedDungeon.recommendedLevel}</p>
-                        </div>
-                    ) : (
-                        <p>Aucun donjon sélectionné.</p>
-                    )}
-                </div>
-            </section>
+            <PreparationSummary
+                teamName={teamName}
+                heroes={heroes}
+                selectedDungeon={selectedDungeon}
+                onClear={clearDungeon}
+            />
 
             <MeetingPoint/>
 
