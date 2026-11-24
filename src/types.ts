@@ -1,6 +1,7 @@
 // Types partagés entre App et les composants du dossier components.
 
 export type HeroChoice = 'warrior' | 'mage' | 'priest' | 'guildMaster'
+export type tabChoice = 'hero' | 'team' | 'expedition' | 'bestiaire'
 
 export type Hero = {
     id: HeroChoice,

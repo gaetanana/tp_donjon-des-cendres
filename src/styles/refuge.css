@@ -27,7 +27,8 @@ body { margin: 0; }
 .refuge h1, .refuge h2 { font-family: Georgia, serif; }
 .refuge h1 { font-size: clamp(2.2rem, 6vw, 4.6rem); line-height: 1.05; }
 .refuge header p { color: #f5dbac; }
-.refuge > section {
+.refuge > section,
+.refuge > .tab-panel > section {
   padding: clamp(1.25rem, 4vw, 2.75rem);
   border-top: 1px solid #756851;
 }

@@ -60,7 +60,7 @@ Cette commande démarre **Vite**, le serveur de développement. Suivez l’adres
 | `index.html` | Donne son titre à l’onglet et fournit un emplacement pour l’application |
 | `src/main.tsx` | Demande à React d’afficher le composant `App` dans cet emplacement |
 | `src/App.tsx` | Décrit ce que vous voyez dans la page. C’est ici que vous écrivez aujourd’hui |
-| `../src/style/refuge.css` | Contient les styles préparés pour votre futur écran |
+| `../src/styles` | Contient les styles préparés pour votre futur écran |
 | `public/` | Contient l’illustration locale utilisée par la feuille de style |
 
 **À vous.** Faites l’[exercice 1](exercices.md#exercice-1). Avant la pause, montrez dans votre IDE la ligne qui a produit le changement à l’écran.

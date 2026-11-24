@@ -1,5 +1,6 @@
 // Depuis components, remonter dans src pour lire les deux types partagés.
 import type { Dungeon, Hero } from '../types'
+import {Panel} from "./Panel";
 
 type PreparationSummaryProps = {
     teamName: string                  // Le nom d’équipe déjà enregistré.
@@ -10,8 +11,7 @@ type PreparationSummaryProps = {
 
 export default function PreparationSummary(props: PreparationSummaryProps) {
     return (
-        <section className="dungeon-catalog">
-            <h2>Récapitulatif du départ</h2>
+        <Panel title="Préparation au départ" className="preparation-summary">
             <p>Équipe : <strong>{props.teamName}</strong></p>
             <ul>
                 {props.heroes.map((hero) => (
@@ -31,6 +31,6 @@ export default function PreparationSummary(props: PreparationSummaryProps) {
                     <p>Aucun donjon sélectionné.</p>
                 )}
             </div>
-        </section>
+        </Panel>
     )
 }

@@ -18,4 +18,4 @@ Dans la fiche, la vie manquante est une expression : maximum moins points actuel
 
 ## Ressource de présentation
 
-Copiez [hero.css](../../src/style/hero.css) dans `src`, puis importez-le depuis `App.tsx`. Le fichier complète le style du refuge déjà présent ; aucun remplacement de `refuge.css` ni nouvelle installation de dépendances n’est nécessaire.
+Copiez [hero.css](../../src/styles/hero.css) dans `src`, puis importez-le depuis `App.tsx`. Le fichier complète le style du refuge déjà présent ; aucun remplacement de `refuge.css` ni nouvelle installation de dépendances n’est nécessaire.

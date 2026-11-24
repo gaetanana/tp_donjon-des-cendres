@@ -1,15 +1,5 @@
-import "./style/refuge.css"
-import "./style/hero.css"
-import "./style/hero-status.css"
-import "./style/health-bonus.css"
-import "./style/hero-selection.css"
-import "./style/hero-details.css"
-import "./style/bestiary.css"
-import "./style/team-form.css"
-import "./style/team-banner.css"
-import "./style/validation.css"
-import './style/dungeon-catalog.css'
-import "./style/hero-rename.css"
+import './styles/style.css'
+import type {tabChoice} from './types'
 import {ChangeEvent, FormEvent, useState} from "react";
 // App possède toujours l'équipe courante et le donjon choisi.
 import type {Hero, HeroChoice} from "./types";
@@ -94,18 +84,26 @@ function InnSign() {
     )
 }
 
+const tabs: { id: tabChoice, label: string }[] = [
+    {id: 'team', label: 'Équipe'},
+    {id: 'hero', label: 'Héros'},
+    {id: 'expedition', label: 'Expédition'},
+    {id: 'bestiaire', label: 'Bestiaire'},
+]
+
 export default function App() {
     const [teamName, setTeamName] = useState<string>('Les Veilleurs');
     const [heroes, setHeroes] = useState<Hero[]>(initialHeroes);
     const [selectedDungeonId, setSelectedDungeonId] = useState<string>('');
+    const [tabActive, setTabActive] = useState<tabChoice>('team');
 
     function renameHero(id: HeroChoice, name: string) {
         // Parcourir la liste courante pour retrouver l’identifiant envoyé par le formulaire.
         setHeroes((currentHeroes) => currentHeroes.map((hero) => {
             if (hero.id === id) {
-                return {...hero, name: name} // Garder les autres champs. Le champ name reçoit le paramètre name.
+                return {...hero, name: name}
             }
-            return hero // Les autres héros gardent leurs propres données.
+            return hero
         }))
     }
 
@@ -122,46 +120,59 @@ export default function App() {
             <header>
                 <h1>Au seuil du refuge du Gonf</h1>
                 <p>Bienvenue au refuge du Gonf</p>
+                <nav className="tabs" aria-label="Rubriques du refuge">
+                    {tabs.map((tab) => (
+                        <button
+                            key={tab.id}
+                            type="button"
+                            aria-pressed={tabActive === tab.id}
+                            onClick={() => setTabActive(tab.id)}
+                        >
+                            {tab.label}
+                        </button>
+                    ))}
+                </nav>
             </header>
 
-            {/* L’équipe reçoit son nom enregistré et la fonction qui peut le changer. */}
-            <TeamPanel teamName={teamName} onRename={setTeamName}/>
+            <div className="tab-panel" hidden={tabActive !== 'team'}>
+                <TeamPanel teamName={teamName} onRename={setTeamName}/>
+                <InnSign/>
+                <MeetingPoint/>
+            </div>
 
-            <InnSign/>
+            <div className="tab-panel" hidden={tabActive !== 'hero'}>
+                <HeroRoster heroes={heroes} onRename={renameHero}/>
+                <section>
+                    <h2>À la guilde</h2>
 
-            {/* La sélection et le formulaire du héros partagent la liste courante. */}
-            <HeroRoster heroes={heroes} onRename={renameHero}/>
+                    <figure className="guild-master">
+                        <img src="/Hong.jpg" alt="Le maître de guilde"/>
+                        <div>
+                            <h2>Le HONG</h2>
+                            <figcaption>Voici le grand et l'unique Maître de guilde</figcaption>
+                        </div>
+                    </figure>
+                    <HeroCard hero={guildMaster}/>
+                </section>
+            </div>
 
-            <section>
-                <h2>À la guilde</h2>
+            <div className="tab-panel" hidden={tabActive !== 'expedition'}>
+                <DungeonPicker
+                    selectedDungeonId={selectedDungeonId}
+                    onChoose={setSelectedDungeonId}
+                />
 
-                <figure className="guild-master">
-                    <img src="/Hong.jpg" alt="Le maître de guilde"/>
-                    <div>
-                        <h2>Le HONG</h2>
-                        <figcaption>Voici le grand et l'unique Maître de guilde</figcaption>
-                    </div>
-                </figure>
-                <HeroCard hero={guildMaster}/>
-            </section>
+                <PreparationSummary
+                    teamName={teamName}
+                    heroes={heroes}
+                    selectedDungeon={selectedDungeon}
+                    onClear={clearDungeon}
+                />
+            </div>
 
-            {/* Le bestiaire retrouve sa liste de monstres dans son propre fichier. */}
-            <Bestiary/>
-
-            <DungeonPicker
-                selectedDungeonId={selectedDungeonId}
-                onChoose={setSelectedDungeonId}
-            />
-
-            <PreparationSummary
-                teamName={teamName}
-                heroes={heroes}
-                selectedDungeon={selectedDungeon}
-                onClear={clearDungeon}
-            />
-
-            <MeetingPoint/>
-
+            <div className="tab-panel" hidden={tabActive !== 'bestiaire'}>
+                <Bestiary/>
+            </div>
         </main>
     )
 }

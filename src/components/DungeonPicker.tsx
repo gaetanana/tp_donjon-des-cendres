@@ -1,6 +1,7 @@
-import { ChangeEvent, useState } from 'react'
+import {ChangeEvent, useState} from 'react'
 // Depuis components, remonter dans src pour lire le catalogue complet.
-import { dungeons } from '../data/dungeons'
+import {dungeons} from '../data/dungeons'
+import {Panel} from "./Panel";
 
 type DungeonPickerProps = {
     selectedDungeonId: string           // L'identifiant gardé par App.
@@ -27,8 +28,7 @@ export default function DungeonPicker(props: DungeonPickerProps) {
         .sort((a, b) => a.recommendedLevel - b.recommendedLevel)
 
     return (
-        <section className="dungeon-catalog">
-            <h2>Catalogue de donjons</h2>
+        <Panel title="Catalogue de donjons" className="dungeon-catalog">
             <div className="catalog-search">
                 <label htmlFor="dungeon-query">Rechercher un donjon</label>
                 <input
@@ -59,6 +59,6 @@ export default function DungeonPicker(props: DungeonPickerProps) {
                     </li>
                 ))}
             </ul>
-        </section>
+        </Panel>
     )
 }

@@ -8,7 +8,7 @@ Conservez une copie de votre essentiel avant de commencer. Aucun bonus précéde
 
 ## Ressources
 
-Les trois portraits vectoriels sont fournis : [guerrier](../../public/warrior.svg), [mage](../../public/portraits/mage.svg), [prêtre](../../public/priest.svg). Copiez-les dans `public/portraits/`. Dans un attribut `src`, `/portraits/warrior.svg` désigne le fichier public correspondant, comme l’image du refuge du bloc 01. Copiez aussi [hero-details.css](../../src/style/hero-details.css) dans `src/` et importez cette feuille après les autres CSS dans `App.tsx`. Elle contient les styles du panneau et de son image.
+Les trois portraits vectoriels sont fournis : [guerrier](../../public/warrior.svg), [mage](../../public/portraits/mage.svg), [prêtre](../../public/priest.svg). Copiez-les dans `public/portraits/`. Dans un attribut `src`, `/portraits/warrior.svg` désigne le fichier public correspondant, comme l’image du refuge du bloc 01. Copiez aussi [hero-details.css](../../src/styles/hero-details.css) dans `src/` et importez cette feuille après les autres CSS dans `App.tsx`. Elle contient les styles du panneau et de son image.
 
 | Choix | Portrait | Histoire fournie |
 | --- | --- | --- |

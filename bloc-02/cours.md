@@ -2,7 +2,7 @@
 
 Le refuge accueille maintenant la fiche du guerrier. Vous allez séparer les valeurs de leur présentation : une modification dans les données actualisera tous les endroits où elles sont affichées.
 
-**Point de départ.** Reprenez votre application essentielle du bloc 01, avec son accueil, sa section « Avant le départ », `../src/style/refuge.css` et `public/refuge.jpg`. Aucun bonus n’est nécessaire. Aujourd’hui, vous modifiez seulement `src/App.tsx` et ajoutez une feuille de style. Vous utiliserez des textes (`string`), des nombres (`number`) et des expressions JSX.
+**Point de départ.** Reprenez votre application essentielle du bloc 01, avec son accueil, sa section « Avant le départ », `../src/styles` et `public/refuge.jpg`. Aucun bonus n’est nécessaire. Aujourd’hui, vous modifiez seulement `src/App.tsx` et ajoutez une feuille de style. Vous utiliserez des textes (`string`), des nombres (`number`) et des expressions JSX.
 
 ## Première période · Relier une donnée à l’écran
 
@@ -14,7 +14,7 @@ Le refuge accueille maintenant la fiche du guerrier. Vous allez séparer les val
 
 ### 1. Reprendre le projet
 
-Ouvrez votre dossier personnel dans WebStorm, puis le terminal à la racine qui contient `package.json`. Copiez le fichier [hero.css](../src/style/hero.css) dans **votre** dossier `src`, à côté de `App.tsx`. Gardez `refuge.css` en place. Ajoutez en haut de `App.tsx`, sous son import existant :
+Ouvrez votre dossier personnel dans WebStorm, puis le terminal à la racine qui contient `package.json`. Copiez le fichier [hero.css](../src/styles/hero.css) dans **votre** dossier `src`, à côté de `App.tsx`. Gardez `refuge.css` en place. Ajoutez en haut de `App.tsx`, sous son import existant :
 
 ```tsx
 import './hero.css'

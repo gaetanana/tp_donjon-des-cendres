@@ -1,0 +1,62 @@
+/* Reprendre les fonds ardoise et les bordures dorées de la fiche du héros. */
+.hero-rename {
+  display: grid;
+  gap: .65rem;
+  margin-top: 1rem;
+  padding: clamp(1rem, 3vw, 1.75rem);
+  min-width: 0;
+  border: 1px solid #8e7b5a;
+  border-radius: .5rem;
+  background: #171e28;
+  color: #f6eddf;
+  overflow-wrap: anywhere;
+}
+
+.hero-rename label { font-weight: 600; }
+
+.hero-rename input,
+.hero-rename button {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 2.75rem;
+  max-width: 100%;
+  padding: .55rem .8rem;
+  border: 1px solid #a99573;
+  border-radius: .35rem;
+  font: inherit;
+}
+
+/* Le champ et le bouton reprennent l'apparence du formulaire d'équipe. */
+.hero-rename input {
+  width: 100%;
+  background: #151c25;
+  color: #fff2dc;
+}
+
+.hero-rename button {
+  justify-self: start;
+  background: #e8c893;
+  color: #29231c;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.hero-rename button:hover { background: #f5dbac; }
+.hero-rename p { margin: 0; }
+.hero-rename #hero-help { color: #d5caba; }
+
+/* Un message et une bordure signalent l'erreur, comme pour le nom d'équipe. */
+.hero-rename input[aria-invalid="true"] { border-color: #ffad92; }
+.hero-rename [role="alert"] {
+  color: #ffded6;
+  border-inline-start: .25rem solid #ffad92;
+  padding-inline-start: .65rem;
+}
+
+/* Le contour doré reste visible au clavier, sur le champ et le bouton. */
+.hero-rename input:focus-visible,
+.hero-rename button:focus-visible {
+  outline: 3px solid #ffe0a2;
+  outline-offset: 3px;
+}

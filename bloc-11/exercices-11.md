@@ -21,7 +21,7 @@ Ouvrez l'adresse indiquée par le terminal. Toutes les modifications suivantes s
 
 ### Ajouter les ressources
 
-1. Copiez le fichier [dungeon-catalog.css](../src/style/dungeon-catalog.css) dans le dossier `src` de votre projet. Cette feuille fournit l'apparence du panneau ; vous n'avez pas de CSS à inventer.
+1. Copiez le fichier [dungeon-catalog.css](../src/styles/dungeon-catalog.css) dans le dossier `src` de votre projet. Cette feuille fournit l'apparence du panneau ; vous n'avez pas de CSS à inventer.
 2. Dans `src/App.tsx`, juste après les imports des autres feuilles de style, ajoutez :
 
    ```tsx
